@@ -62,7 +62,7 @@ How to Use
     Prepare a text file with a list of URLs (one URL per line).
     Run the script:
 
-    .\url_opener.ps1 -filePath "C:\path\to\your\file.txt" -range "1-10"
+    .\script.ps1 -filePath "C:\path\to\your\file.txt" -range "1-10"
 
         Replace "C:\path\to\your\file.txt" with the path to your URL file.
         Replace "1-10" with the range of URLs you want to open (e.g., "11-20"). To open all URLs, leave the -range parameter empty.
@@ -76,11 +76,11 @@ Example Usage
 
 To open URLs from lines 1 to 10 in a file:
 
-.\url_opener.ps1 -filePath "C:\path\to\urls.txt" -range "1-10"
+.\script.ps1 -filePath "C:\path\to\urls.txt" -range "1-10"
 
 To open all URLs in the file:
 
-.\url_opener.ps1 -filePath "C:\path\to\urls.txt"
+.\script.ps1 -filePath "C:\path\to\urls.txt"
 
 Notes
 
