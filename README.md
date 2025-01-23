@@ -1,4 +1,4 @@
-CamHunter
+# CamHunter
 
 This Python tool helps you gather publicly available CCTV camera streams from Insecam, an online directory of unsecured cameras.
 Features
