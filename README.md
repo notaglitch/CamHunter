@@ -38,3 +38,51 @@ Notes
 
     This tool scrapes public camera data from Insecam, so it's important to use it responsibly.
     Ensure that you are compliant with any relevant laws and regulations when accessing publicly available cameras.
+
+# URL Opener Script
+
+## Automate browsing through cameras
+
+This PowerShell script opens a list of URLs in Firefox's private browsing mode. You can specify a range of URLs to open or open all URLs in the file.
+Features
+
+    Opens URLs listed in a text file.
+    Supports opening a specific range of URLs (e.g., 1-10).
+    Opens all URLs if no range is provided.
+    Uses Firefox in private browsing mode to open URLs.
+
+Requirements
+
+    PowerShell (works on Windows).
+    Firefox installed on the system.
+
+How to Use
+
+    Clone or download this repository.
+    Prepare a text file with a list of URLs (one URL per line).
+    Run the script:
+
+    .\url_opener.ps1 -filePath "C:\path\to\your\file.txt" -range "1-10"
+
+        Replace "C:\path\to\your\file.txt" with the path to your URL file.
+        Replace "1-10" with the range of URLs you want to open (e.g., "11-20"). To open all URLs, leave the -range parameter empty.
+
+Parameters
+
+    $filePath: Path to the text file containing URLs.
+    $range: A range of URLs to open in the format startIndex-endIndex. If no range is provided, all URLs will be opened.
+
+Example Usage
+
+To open URLs from lines 1 to 10 in a file:
+
+.\url_opener.ps1 -filePath "C:\path\to\urls.txt" -range "1-10"
+
+To open all URLs in the file:
+
+.\url_opener.ps1 -filePath "C:\path\to\urls.txt"
+
+Notes
+
+    Ensure Firefox is installed at the default location (C:\Program Files\Mozilla Firefox\firefox.exe), or update the script with the correct path.
+    The script opens the URLs in Firefox's private window for privacy.
