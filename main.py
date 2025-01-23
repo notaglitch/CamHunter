@@ -49,11 +49,10 @@ try:
                     if res.status_code == 200:
                         find_ip = re.findall(r"http://\d+.\d+.\d+.\d+:\d+", res.text)
 
-                        # Open the file in append mode ('a')
-                        with open(f'{country}.txt', 'a') as f:  # Changed from 'w' to 'a'
+                        with open(f'{country}.txt', 'a') as f:
                             for ip in find_ip:
                                 print("\033[1;31m", ip)
-                                f.write(f'{ip}\n')  # Appending to the file
+                                f.write(f'{ip}\n')
             else:
                 print("No pages found.")
         else:
