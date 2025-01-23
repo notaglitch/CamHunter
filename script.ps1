@@ -24,17 +24,21 @@ if ($range -match '^\d+-\d+$') {
     
     Write-Host "Opening links from index $startIndex to $endIndex"
 
-    $firefoxPath = "C:\Program Files\Mozilla Firefox\firefox.exe"
-
-    foreach ($url in $urlsToOpen) {
-        Write-Host "Opening $url in Firefox (Private Window)..."
-        Start-Process -FilePath $firefoxPath -ArgumentList "--private-window", $url
-        Start-Sleep -Seconds 1
-    }
-
-    Write-Host "Done opening URLs!"
+} elseif (-not $range) {
+    $urlsToOpen = $urls
+    Write-Host "Opening all URLs"
 }
 else {
     Write-Host "Invalid range format! Please use a format like 1-10"
     exit
 }
+
+$firefoxPath = "C:\Program Files\Mozilla Firefox\firefox.exe"
+
+foreach ($url in $urlsToOpen) {
+    Write-Host "Opening $url in Firefox (Private Window)..."
+    Start-Process -FilePath $firefoxPath -ArgumentList "--private-window", $url
+    Start-Sleep -Seconds 1
+}
+
+Write-Host "Done opening URLs!"
